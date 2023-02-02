@@ -1,0 +1,17 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "version": "1.15.2",
+    "libraryName": "spfx-company-announcements-ace",
+    "libraryId": "8c560ca7-bba2-416c-b44c-0050bda52774",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "spfx-company-announcements-ace",
+    "solutionShortDescription": "spfx-company-announcements-ace description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "adaptiveCardExtension",
+    "aceTemplateType": "Basic"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "important-announcements-adaptive-card-extension": {
+      "components": [
+        {
+          "entrypoint": "./lib/adaptiveCardExtensions/importantAnnouncements/ImportantAnnouncementsAdaptiveCardExtension.js",
+          "manifest": "./src/adaptiveCardExtensions/importantAnnouncements/ImportantAnnouncementsAdaptiveCardExtension.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "ImportantAnnouncementsAdaptiveCardExtensionStrings": "lib/adaptiveCardExtensions/importantAnnouncements/loc/{locale}.js"
+  }
+}

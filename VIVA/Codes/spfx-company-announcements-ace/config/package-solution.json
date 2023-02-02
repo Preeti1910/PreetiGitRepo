@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "spfx-company-announcements-ace-client-side-solution",
+    "id": "8c560ca7-bba2-416c-b44c-0050bda52774",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.15.2"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "spfx-company-announcements-ace description"
+      },
+      "longDescription": {
+        "default": "spfx-company-announcements-ace description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "spfx-company-announcements-ace Feature",
+        "description": "The feature that activates elements of the spfx-company-announcements-ace solution.",
+        "id": "4d203c4b-6cb5-4b81-bc1a-d66db8d0589a",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/spfx-company-announcements-ace.sppkg"
+  }
+}
