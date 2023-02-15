@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "holiday-list-ace-adaptive-card-extension": {
+      "components": [
+        {
+          "entrypoint": "./lib/adaptiveCardExtensions/holidayListAce/HolidayListAceAdaptiveCardExtension.js",
+          "manifest": "./src/adaptiveCardExtensions/holidayListAce/HolidayListAceAdaptiveCardExtension.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "HolidayListAceAdaptiveCardExtensionStrings": "lib/adaptiveCardExtensions/holidayListAce/loc/{locale}.js"
+  }
+}

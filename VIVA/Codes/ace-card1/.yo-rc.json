@@ -1,0 +1,17 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "version": "1.15.2",
+    "libraryName": "ace-card-spolist",
+    "libraryId": "857cba00-dc11-4015-807c-942a06dc7740",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "ace-card-spolist",
+    "solutionShortDescription": "ace-card-spolist description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "adaptiveCardExtension",
+    "aceTemplateType": "Basic"
+  }
+}

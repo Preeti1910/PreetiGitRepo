@@ -1,0 +1,87 @@
+{
+  "type": "AdaptiveCard",
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "version": "1.3",
+  "body": [
+      {
+          "type": "Container",
+          "items": [
+              {
+                  "type": "TextBlock",
+                  "text": "Holiday List",
+                  "wrap": true,
+                  "weight": "Bolder",
+                  "horizontalAlignment": "Center"
+              }
+          ],
+          "id": "cardHeaderContainer"
+      },
+      {
+          "type": "Container",
+          "items": [
+              {
+                  "type": "ColumnSet",
+                  "columns": [
+                      {
+                          "type": "Column",
+                          "width": "stretch",
+                          "items": [
+                              {
+                                  "type": "TextBlock",
+                                  "text": "Holiday",
+                                  "wrap": true
+                              }
+                          ]
+                      },
+                      {
+                          "type": "Column",
+                          "width": "stretch",
+                          "items": [
+                              {
+                                  "type": "TextBlock",
+                                  "text": "Date",
+                                  "wrap": true
+                              }
+                          ]
+                      }
+                  ]
+              }
+          ],
+          "id": "listHeaderContainer"
+      },
+      {
+          "type": "Container",
+          "items": [
+              {
+                  "type": "ColumnSet",
+                  "$data": "${listItems}",
+                  "columns": [
+                      {
+                          "type": "Column",
+                          "width": "stretch",
+                          "items": [
+                              {
+                                  "type": "TextBlock",
+                                  "text": "${title}",
+                                  "wrap": true
+                              }
+                          ]
+                      },
+                      {
+                          "type": "Column",
+                          "width": "stretch",
+                          "items": [
+                              {
+                                  "type": "TextBlock",
+                                  "text": "${holidayDate}",
+                                  "wrap": true
+                              }
+                          ]
+                      }
+                  ]
+              }
+          ],
+          "id": "rowContainer"
+      }
+  ]
+}

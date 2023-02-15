@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "ace-card-spolist-client-side-solution",
+    "id": "857cba00-dc11-4015-807c-942a06dc7740",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.15.2"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "ace-card-spolist description"
+      },
+      "longDescription": {
+        "default": "ace-card-spolist description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "ace-card-spolist Feature",
+        "description": "The feature that activates elements of the ace-card-spolist solution.",
+        "id": "8a43843a-d1ac-4434-a04a-ee826abed2d1",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/ace-card-spolist.sppkg"
+  }
+}
