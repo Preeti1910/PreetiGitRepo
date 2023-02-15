@@ -1,0 +1,17 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "version": "1.15.2",
+    "libraryName": "modal-extension",
+    "libraryId": "e3d299c1-3ee0-4550-ac27-f22614c482cd",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "modal-extension",
+    "solutionShortDescription": "modal-extension description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "extension",
+    "extensionType": "ApplicationCustomizer"
+  }
+}

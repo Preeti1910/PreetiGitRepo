@@ -1,0 +1,29 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/spfx-serve.schema.json",
+  "port": 4321,
+  "https": true,
+  "serveConfigurations": {
+    "default": {
+      "pageUrl": "https://m365x07898200.sharepoint.com/sites/TestViva/SitePages/modal-test.aspx",
+      "customActions": {
+        "b5585d43-d7ab-407a-a7ab-2ad81ca35739": {
+          "location": "ClientSideExtension.ApplicationCustomizer",
+          "properties": {
+            "testMessage": "Test message"
+          }
+        }
+      }
+    },
+    "modalExtension": {
+      "pageUrl": "https://m365x07898200.sharepoint.com/sites/TestViva/SitePages/modal-test.aspx",
+      "customActions": {
+        "b5585d43-d7ab-407a-a7ab-2ad81ca35739": {
+          "location": "ClientSideExtension.ApplicationCustomizer",
+          "properties": {
+            "testMessage": "Test message"
+          }
+        }
+      }
+    }
+  }
+}
