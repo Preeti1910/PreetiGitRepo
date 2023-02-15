@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "msal-auth-client-side-solution",
+    "id": "e3db40e4-d627-4b44-8bc9-a21929cdff3d",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.15.2"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "msal-auth description"
+      },
+      "longDescription": {
+        "default": "msal-auth description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "msal-auth Feature",
+        "description": "The feature that activates elements of the msal-auth solution.",
+        "id": "2bb95a91-2778-42ef-985f-a1b52fa9bf80",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/msal-auth.sppkg"
+  }
+}

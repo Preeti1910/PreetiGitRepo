@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "consume-api-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/consumeApi/ConsumeApiWebPart.js",
+          "manifest": "./src/webparts/consumeApi/ConsumeApiWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "ConsumeApiWebPartStrings": "lib/webparts/consumeApi/loc/{locale}.js"
+  }
+}

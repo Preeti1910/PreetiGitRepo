@@ -1,0 +1,16 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "version": "1.15.2",
+    "libraryName": "msal-auth",
+    "libraryId": "e3db40e4-d627-4b44-8bc9-a21929cdff3d",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "msal-auth",
+    "solutionShortDescription": "msal-auth description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}
