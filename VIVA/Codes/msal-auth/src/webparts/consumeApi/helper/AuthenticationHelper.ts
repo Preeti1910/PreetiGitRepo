@@ -7,20 +7,25 @@ import { Constants } from "./Constants";
  */
 export class AuthenticationHelper {
 
+
+
     private myMSALObj: PublicClientApplication;
     private userLoginName: string;
     private ssoRequest: any;
- 
+
 
     constructor(configuration: any) {
         try {
-            
+
             this.userLoginName = configuration.loginName;
             const msalConfig = {
                 auth: {
                     authority: Constants.AutorityUrl.replace(Constants.TenantIdPlaceHolder, configuration.tenantId),
                     clientId: configuration.clientId,
                     redirectUri: configuration.redirectUrl
+                },
+                cache: {
+                    cacheLocation: "localStorage", // set your cache location to local storage
                 }
             };
 
@@ -41,7 +46,7 @@ export class AuthenticationHelper {
     public retrieveAccessToken = async (scopes?: any): Promise<any> => {
         console.log('retrieveAccessToken() has been invoked.');
 
-        if(scopes && scopes.length > 0){
+        if (scopes && scopes.length > 0) {
             this.ssoRequest.scopes = scopes;
         }
 
@@ -61,6 +66,8 @@ export class AuthenticationHelper {
         }
     }
 
+  
+
     private handleLoggedInUser = async (currentAccounts: AccountInfo[]): Promise<any> => {
         let accountObj = null;
         if (currentAccounts === null) {
@@ -72,7 +79,7 @@ export class AuthenticationHelper {
             accountObj = currentAccounts[0];
         }
 
-        if (accountObj != null) {
+        if (accountObj !== null) {
             this.ssoRequest.account = accountObj;
             return this.myMSALObj.acquireTokenSilent(this.ssoRequest)
                 .then((accessToken) => {

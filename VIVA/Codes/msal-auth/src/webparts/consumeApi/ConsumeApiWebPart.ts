@@ -3,14 +3,16 @@ import * as ReactDom from 'react-dom';
 import { Version } from '@microsoft/sp-core-library';
 import {
   IPropertyPaneConfiguration,
+  PropertyPaneDropdown,
   PropertyPaneTextField
 } from '@microsoft/sp-property-pane';
-import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
+import { BaseClientSideWebPart, WebPartContext } from '@microsoft/sp-webpart-base';
 import { IReadonlyTheme } from '@microsoft/sp-component-base';
 
 import * as strings from 'ConsumeApiWebPartStrings';
 import ConsumeApi from './components/ConsumeApi';
 import { IConsumeApiProps } from './components/IConsumeApiProps';
+import { Configuration } from './helper/Configuration';
 
 export interface IConsumeApiWebPartProps {
   description: string;
@@ -23,6 +25,12 @@ export interface IConsumeApiWebPartProps {
   OcpApimSubscriptionKey: string;
   RequestObject: string;
   APImethod:string;
+  AuthTokenTypeToGenerate:string;
+  GrantType:string;
+  ClientSecret:string;
+  ExternalTokenURL:string;
+  ExternalURLSuffix:string;
+  //context:WebPartContext;  
 }
 
 export default class ConsumeApiWebPart extends BaseClientSideWebPart<IConsumeApiWebPartProps> {
@@ -51,8 +59,13 @@ export default class ConsumeApiWebPart extends BaseClientSideWebPart<IConsumeApi
         OcpApimTrace: this.properties.OcpApimTrace,
         OcpApimSubscriptionKey: this.properties.OcpApimSubscriptionKey,
         RequestObject: this.properties.RequestObject,
-        APImethod: this.properties.APImethod
-
+        AuthTokenTypeToGenerate: this.properties.AuthTokenTypeToGenerate,
+        APImethod: this.properties.APImethod,
+        grantType: this.properties.GrantType,
+        externalTokenURL: this.properties.ExternalTokenURL,
+        externalURLSuffix: this.properties.ExternalURLSuffix,
+        clientSecret: this.properties.ClientSecret,
+        context: this.context
       }
     );
 
@@ -100,6 +113,12 @@ export default class ConsumeApiWebPart extends BaseClientSideWebPart<IConsumeApi
   }
 
   protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
+    /*
+    if(this.properties.AuthTokenTypeToGenerate == 'UserAcountAccesssToken'){
+      this.properties.ClientId.
+    }*/
+
+
     return {
       pages: [
         {
@@ -112,14 +131,18 @@ export default class ConsumeApiWebPart extends BaseClientSideWebPart<IConsumeApi
               groupFields: [
                 PropertyPaneTextField('description', {
                   label: strings.DescriptionFieldLabel
+                }),
+                PropertyPaneDropdown('AuthTokenTypeToGenerate', {
+                  label: strings.AuthTokenTypeToGenerateFieldLabel,                 
+                  options: Configuration.APIAuthOptions
                 })
               ]
-            },
+            },           
             {
               groupName: strings.AadAppConfigurationGroupName,
               groupFields: [
                 PropertyPaneTextField('ClientId', {
-                  label: strings.ClientIdFieldLabel
+                  label: strings.ClientIdFieldLabel,                                    
                 }),
                 PropertyPaneTextField('TenantId', {
                   label: strings.TenantIdFieldLabel
@@ -129,12 +152,25 @@ export default class ConsumeApiWebPart extends BaseClientSideWebPart<IConsumeApi
                 }),
                 PropertyPaneTextField('Scope', {
                   label: strings.ScopeFieldLabel
+                }),
+                PropertyPaneDropdown('GrantType', {
+                  label: strings.GrantTypeFieldLabel,                 
+                  options: Configuration.GrantTypeOptions
+                }),
+                PropertyPaneTextField('ClientSecret', {
+                  label: strings.ClientSecretFieldLabel
+                }),
+                PropertyPaneTextField('ExternalTokenURL', {
+                  label: strings.ExternalTokenURLFieldLabel
+                }),
+                PropertyPaneTextField('ExternalURLSuffix', {
+                  label: strings.ExternalURLSuffixFieldLabel
                 })
               ]
             },
             {
               groupName: strings.APIConfigurationGroupName,
-              groupFields: [
+              groupFields: [                
                 PropertyPaneTextField('APIURL', {
                   label: strings.APIURLFieldLabel
                 }),

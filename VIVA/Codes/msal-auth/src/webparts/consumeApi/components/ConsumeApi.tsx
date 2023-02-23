@@ -5,6 +5,7 @@ import { escape } from '@microsoft/sp-lodash-subset';
 import { IConsumeApiStates } from './IConsumeApiStates';
 import { AuthenticationHelper } from '../helper/AuthenticationHelper';
 import { APIInvoker } from '../helper/APIInvoker';
+import { ServiceProvider } from '../helper/ServiceProvider';
 
 export default class ConsumeApi extends React.Component<IConsumeApiProps, IConsumeApiStates> {
 
@@ -12,6 +13,7 @@ export default class ConsumeApi extends React.Component<IConsumeApiProps, IConsu
   private authenticationHelper: AuthenticationHelper;
   private accessToken: string;
   private aPIInvoker: APIInvoker;
+  private serviceProvider: ServiceProvider;
 
 
 
@@ -22,8 +24,11 @@ export default class ConsumeApi extends React.Component<IConsumeApiProps, IConsu
     this.aPIInvoker = new APIInvoker();
     this.state = {
       result: "",
-      accessToken:""
+      accessToken: ""
     }
+
+
+    // this.serviceProvider = new ServiceProvider(this.props.context);
 
   }
   populateConfiguration(): any {
@@ -32,21 +37,98 @@ export default class ConsumeApi extends React.Component<IConsumeApiProps, IConsu
       clientId: this.props.ClientId,
       tenantId: this.props.TenantId,
       redirectUrl: this.props.RedirectUrl,
-      scope: (this.props.Scope) ? JSON.parse(this.props.Scope) : [],
+      //scope: (this.props.Scope) ? JSON.parse(this.props.Scope) : [],
+      scope: this.props.Scope,
       apiURL: this.props.APIURL,
       OcpApimSubscriptionKey: this.props.OcpApimSubscriptionKey,
       OcpApimTrace: this.props.OcpApimTrace,
       RequestObject: this.props.RequestObject,
-      APImethod: this.props.APImethod
+      authTokenTypeToGenerate: this.props.AuthTokenTypeToGenerate,
+      APImethod: this.props.APImethod,
+      grantType: this.props.grantType,
+      clientSecret: this.props.clientSecret,
+      externalTokenURL: this.props.externalTokenURL,
+      externalURLSuffix: this.props.externalURLSuffix,
+      context: this.props.context
     };
   }
   async componentDidMount() {
-    this.accessToken = await this.authenticationHelper.retrieveAccessToken();
-    console.log('access token: ' + this.accessToken);
-   
-    this.setState({accessToken: this.accessToken});
-    await this.getResults();
-   
+
+    if (this.webPartConfiguration.authTokenTypeToGenerate === "UserAcountAccesssToken") {
+      // this.accessToken = await this.authenticationHelper.retrieveAccessToken(['api://399557e2-0984-4a3a-868c-d9093e395506/.default']);
+      if (this.webPartConfiguration.scope) {
+        this.accessToken = await this.authenticationHelper.retrieveAccessToken([this.webPartConfiguration.scope]);
+      } else {
+        this.accessToken = await this.authenticationHelper.retrieveAccessToken();
+      }
+      console.log('user access token: ' + this.accessToken);
+      if (this.accessToken) {
+        this.setState({ accessToken: this.accessToken });
+        await this.getResults();
+      }
+
+    } else if (this.webPartConfiguration.authTokenTypeToGenerate === "ServiceAcountAccessToken") {
+      this.accessToken = await this.aPIInvoker.retrieveServiceAcountAccessTokenJson(this.webPartConfiguration);
+      console.log('service account access token: ' + this.accessToken);
+      if (this.accessToken) {
+        this.setState({ accessToken: this.accessToken });
+        await this.getResults();
+      }
+    } else if (this.webPartConfiguration.authTokenTypeToGenerate === "ExternalAPI") {
+
+     // var resulttest = await this.aPIInvoker.test(this.webPartConfiguration);
+
+      
+     var result = await this.aPIInvoker.retrieveAccessTokenForexternal(this.webPartConfiguration);
+     
+      if (result) {
+        const jsonData = JSON.parse(result);
+
+        this.accessToken = jsonData.access_token;
+        var instance_url = jsonData.instance_url;
+        /*
+        this.accessToken = result['access_token'];
+        var instance_url = result['instance_url'];
+        */
+
+        var serviceURL = instance_url + this.webPartConfiguration.externalURLSuffix;
+
+        var requestPayloadForMainResults = {
+          accessToken: this.accessToken,
+          apiURL: serviceURL,
+          APImethod: this.props.APImethod,
+          requestObj: this.props.RequestObject,
+        }
+
+        await this.getExternalAPIResults(requestPayloadForMainResults);
+      }
+    }
+
+    //this.getData(); // using httpclient
+
+  }
+
+  private async getExternalAPIResults(requestPayload: any) {
+    await this.aPIInvoker.callAPI(requestPayload).then(
+      (response: any): any => {
+        console.log("getExternalAPIResults: " + response);
+        this.setState({ result: response });
+      }
+    ).catch(ex => {
+      console.log(ex)
+    });
+  }
+
+  private getData() {
+    this.serviceProvider.getTotals().then(
+      (result: any): void => {
+        console.log(result);
+        //this.setState({data:result[0]});  
+      }
+    )
+      .catch(error => {
+        console.log(error);
+      });
   }
 
   private async getResults() {
@@ -61,8 +143,8 @@ export default class ConsumeApi extends React.Component<IConsumeApiProps, IConsu
       }
       await this.aPIInvoker.callAPI(requestPayloadForMainResults).then(
         (response: any): any => {
-          console.log(response);         
-          this.setState({result: response});
+          console.log(response);
+          this.setState({ result: response });
         }
       ).catch(ex => {
         console.log(ex)
@@ -78,9 +160,9 @@ export default class ConsumeApi extends React.Component<IConsumeApiProps, IConsu
       environmentMessage,
       hasTeamsContext,
       userDisplayName,
-      
+
     } = this.props;
-   
+
 
     return (
       <section className={`${styles.consumeApi} ${hasTeamsContext ? styles.teams : ''}`}>
@@ -95,7 +177,7 @@ export default class ConsumeApi extends React.Component<IConsumeApiProps, IConsu
 
 
         </div>
-       
+
       </section>
     );
   }
