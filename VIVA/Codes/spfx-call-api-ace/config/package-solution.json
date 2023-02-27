@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "consume-api-from-ace-client-side-solution",
+    "id": "e41ba02a-02bf-4f3d-b04f-c05fbff31e85",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.16.1"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "consume-api-from-ace description"
+      },
+      "longDescription": {
+        "default": "consume-api-from-ace description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "consume-api-from-ace Feature",
+        "description": "The feature that activates elements of the consume-api-from-ace solution.",
+        "id": "713ae0cd-01ab-4bde-ab35-95be2cb3c85b",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/consume-api-from-ace.sppkg"
+  }
+}
