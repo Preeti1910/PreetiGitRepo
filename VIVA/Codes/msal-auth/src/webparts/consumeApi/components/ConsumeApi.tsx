@@ -6,6 +6,7 @@ import { IConsumeApiStates } from './IConsumeApiStates';
 import { AuthenticationHelper } from '../helper/AuthenticationHelper';
 import { APIInvoker } from '../helper/APIInvoker';
 import { ServiceProvider } from '../helper/ServiceProvider';
+import { AADServiceProvider } from '../helper/AADServiceProvider';
 
 export default class ConsumeApi extends React.Component<IConsumeApiProps, IConsumeApiStates> {
 
@@ -14,6 +15,7 @@ export default class ConsumeApi extends React.Component<IConsumeApiProps, IConsu
   private accessToken: string;
   private aPIInvoker: APIInvoker;
   private serviceProvider: ServiceProvider;
+  private aadServiceProvider: AADServiceProvider;
 
 
 
@@ -67,7 +69,15 @@ export default class ConsumeApi extends React.Component<IConsumeApiProps, IConsu
         await this.getResults();
       }
 
-    } else if (this.webPartConfiguration.authTokenTypeToGenerate === "ServiceAcountAccessToken") {
+    }else if (this.webPartConfiguration.authTokenTypeToGenerate === "UsingAADHttpClient") {
+      this.aadServiceProvider = new AADServiceProvider(this.webPartConfiguration.context);
+      await this.aadServiceProvider.getResponse(this.webPartConfiguration.apiURL,this.webPartConfiguration.scope).then(
+        (result: any): void =>{
+          console.log('result =' + result);
+        }
+      );
+
+    }else if (this.webPartConfiguration.authTokenTypeToGenerate === "ServiceAcountAccessToken") {
       this.accessToken = await this.aPIInvoker.retrieveServiceAcountAccessTokenJson(this.webPartConfiguration);
       console.log('service account access token: ' + this.accessToken);
       if (this.accessToken) {
@@ -76,11 +86,11 @@ export default class ConsumeApi extends React.Component<IConsumeApiProps, IConsu
       }
     } else if (this.webPartConfiguration.authTokenTypeToGenerate === "ExternalAPI") {
 
-     // var resulttest = await this.aPIInvoker.test(this.webPartConfiguration);
+      // var resulttest = await this.aPIInvoker.test(this.webPartConfiguration);
 
-      
-     var result = await this.aPIInvoker.retrieveAccessTokenForexternal(this.webPartConfiguration);
-     
+
+      var result = await this.aPIInvoker.retrieveAccessTokenForexternal(this.webPartConfiguration);
+
       if (result) {
         const jsonData = JSON.parse(result);
 
@@ -120,7 +130,7 @@ export default class ConsumeApi extends React.Component<IConsumeApiProps, IConsu
   }
 
   private getData() {
-    this.serviceProvider.getTotals().then(
+    this.serviceProvider.getTotals(this.webPartConfiguration.apiURL).then(
       (result: any): void => {
         console.log(result);
         //this.setState({data:result[0]});  

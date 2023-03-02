@@ -7,13 +7,16 @@ export class Configuration {
     public static APIAuthOptions = [
         {
             key: 'UserAcountAccesssToken',
-            text: 'User Acount Accesss Token'
+            text: 'User Acount Accesss Token (MSAL)'
+        },
+        {
+            key: 'UsingAADHttpClient',
+            text: 'Using AAD HttpClient'
         },
         {
             key: 'ServiceAcountAccessToken',
             text: 'Service Acount Access Token'
-        }
-        ,
+        },
         {
             key: 'ExternalAPI',
             text: 'External API'

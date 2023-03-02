@@ -58,6 +58,7 @@ export class AuthenticationHelper {
             return this.loginForAccessTokenByMSAL()
                 .then((token) => {
                     console.log('Retrieved the graph token successfully.');
+                    console.log(token);
                     return token;
                 }).catch(error => {
                     console.log(error, { message: 'Error occured in the retrieving graph token.' });

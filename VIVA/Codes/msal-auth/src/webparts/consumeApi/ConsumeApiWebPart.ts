@@ -76,6 +76,7 @@ export default class ConsumeApiWebPart extends BaseClientSideWebPart<IConsumeApi
     this._environmentMessage = this._getEnvironmentMessage();
 
     return super.onInit();
+    
   }
 
   private _getEnvironmentMessage(): string {
