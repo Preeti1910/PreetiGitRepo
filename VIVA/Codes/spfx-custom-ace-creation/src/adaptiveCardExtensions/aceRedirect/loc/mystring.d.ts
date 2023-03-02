@@ -1,4 +1,4 @@
-declare interface ISharePointRestAdaptiveCardExtensionStrings {
+declare interface IAceRedirectAdaptiveCardExtensionStrings {
   PropertyPaneDescription: string;
   TitleFieldLabel: string;
   Title: string;
@@ -12,7 +12,7 @@ declare interface ISharePointRestAdaptiveCardExtensionStrings {
   ParamNameFieldLabel:string;
 }
 
-declare module 'SharePointRestAdaptiveCardExtensionStrings' {
-  const strings: ISharePointRestAdaptiveCardExtensionStrings;
+declare module 'AceRedirectAdaptiveCardExtensionStrings' {
+  const strings: IAceRedirectAdaptiveCardExtensionStrings;
   export = strings;
 }

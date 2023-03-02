@@ -9,10 +9,19 @@
           "manifest": "./src/adaptiveCardExtensions/sharePointRest/SharePointRestAdaptiveCardExtension.manifest.json"
         }
       ]
+    },
+    "ace-redirect-adaptive-card-extension": {
+      "components": [
+        {
+          "entrypoint": "./lib/adaptiveCardExtensions/aceRedirect/AceRedirectAdaptiveCardExtension.js",
+          "manifest": "./src/adaptiveCardExtensions/aceRedirect/AceRedirectAdaptiveCardExtension.manifest.json"
+        }
+      ]
     }
   },
   "externals": {},
   "localizedResources": {
-    "SharePointRestAdaptiveCardExtensionStrings": "lib/adaptiveCardExtensions/sharePointRest/loc/{locale}.js"
+    "SharePointRestAdaptiveCardExtensionStrings": "lib/adaptiveCardExtensions/sharePointRest/loc/{locale}.js",
+    "AceRedirectAdaptiveCardExtensionStrings": "lib/adaptiveCardExtensions/aceRedirect/loc/{locale}.js"
   }
 }

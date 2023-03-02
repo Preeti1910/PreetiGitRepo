@@ -1,7 +1,7 @@
 import { IPropertyPaneConfiguration, PropertyPaneTextField } from '@microsoft/sp-property-pane';
-import * as strings from 'SharePointRestAdaptiveCardExtensionStrings';
+import * as strings from 'AceRedirectAdaptiveCardExtensionStrings';
 
-export class SharePointRestPropertyPane {
+export class AceRedirectPropertyPane {
   public getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
     return {
       pages: [
@@ -13,9 +13,6 @@ export class SharePointRestPropertyPane {
               groupFields: [
                 PropertyPaneTextField('title', {
                   label: strings.TitleFieldLabel
-                }),
-                PropertyPaneTextField('listId', {
-                  label: 'List ID (GUID)'
                 })
               ]
             },
