@@ -46,19 +46,31 @@ export default class ApiConsumerCardAdaptiveCardExtension extends BaseAdaptiveCa
     this.cardNavigator.register(CARD_VIEW_REGISTRY_ID, () => new CardView());
     this.quickViewNavigator.register(QUICK_VIEW_REGISTRY_ID, () => new QuickView());
 
-    this.loggerHelper = new LoggerHelper(this.properties.applicationName, this.properties.appInsightsConnectionString);
+    this.loggerHelper = new LoggerHelper(this.properties.applicationName , this.properties.appInsightsConnectionString);
  
 
     console.log('apiURL: ' + this.properties.apiURL);
 
-    this.loggerHelper.trackTrace("onInit called ApiConsumerCardAdaptiveCardExtension",this.properties.apiURL)
+    this.loggerHelper.trackTrace("onInit called ApiConsumerCardAdaptiveCardExtension " +this.properties.apiURL);
     if(this.properties.apiURL){
-      //this.serviceProvider = new ServiceProvider(this.context.spHttpClient);    
-      this.aadServiceProvider = new AADServiceProvider(this.context); 
+      //this.serviceProvider = new ServiceProvider(this.context.spHttpClient); 
+      var aadServiceProviderObj={
+        context: this.context,
+        applicationName:this.properties.applicationName,
+        appInsightsConnectionString:this.properties.appInsightsConnectionString
+      }
+      //this.aadServiceProvider = new AADServiceProvider(this.context); 
+      this.aadServiceProvider = new AADServiceProvider(aadServiceProviderObj); 
      
+      
+      var paramObj ={
+        apiURL:this.properties.apiURL,
+        aadAplicationResource:this.properties.aadAplicationResource
+      }
      
        
-      const apiResponse = await this.aadServiceProvider.getResponse(this.properties.apiURL,this.properties.aadAplicationResource)
+      //const apiResponse = await this.aadServiceProvider.getResponse(this.properties.apiURL,this.properties.aadAplicationResource);
+      const apiResponse = await this.aadServiceProvider.getResponse(paramObj);
       console.log('apiResponse: ' + apiResponse);
       if(apiResponse){
         this.setState({
