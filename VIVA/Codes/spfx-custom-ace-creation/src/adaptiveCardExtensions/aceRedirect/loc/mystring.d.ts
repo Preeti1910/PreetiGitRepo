@@ -9,7 +9,14 @@ declare interface IAceRedirectAdaptiveCardExtensionStrings {
   BasicGroupName:string;
   RedirectionDetailsGroupName:string;
   RedirectURLFieldLabel:string;
+  TeamsWindowURLFieldLabel:string;
   ParamNameFieldLabel:string;
+  AppInsightsGroupName:string;
+  ApplicationNameFieldLabel:string;
+  AppInsightsConnectionStringFieldLabel:string
+  APIGroupName: string;
+  APIURLFieldLabel:string;
+  AADAplicationResourceFieldLabel:string;
 }
 
 declare module 'AceRedirectAdaptiveCardExtensionStrings' {

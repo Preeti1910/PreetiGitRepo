@@ -7,6 +7,7 @@ import { AuthenticationHelper } from '../helper/AuthenticationHelper';
 import { APIInvoker } from '../helper/APIInvoker';
 import { ServiceProvider } from '../helper/ServiceProvider';
 import { AADServiceProvider } from '../helper/AADServiceProvider';
+import { LoggerHelper } from '../helper/LoggerHelper';
 
 export default class ConsumeApi extends React.Component<IConsumeApiProps, IConsumeApiStates> {
 
@@ -16,12 +17,14 @@ export default class ConsumeApi extends React.Component<IConsumeApiProps, IConsu
   private aPIInvoker: APIInvoker;
   private serviceProvider: ServiceProvider;
   private aadServiceProvider: AADServiceProvider;
+  private loggerHelper: LoggerHelper;
 
 
 
   public constructor(props: IConsumeApiProps, state: IConsumeApiStates) {
     super(props);
     this.webPartConfiguration = this.populateConfiguration();
+    this.loggerHelper = new LoggerHelper(this.webPartConfiguration.applicationName, this.webPartConfiguration.appInsightsConnectionString);
     this.authenticationHelper = new AuthenticationHelper(this.webPartConfiguration);
     this.aPIInvoker = new APIInvoker();
     this.state = {
@@ -51,7 +54,9 @@ export default class ConsumeApi extends React.Component<IConsumeApiProps, IConsu
       clientSecret: this.props.clientSecret,
       externalTokenURL: this.props.externalTokenURL,
       externalURLSuffix: this.props.externalURLSuffix,
-      context: this.props.context
+      context: this.props.context,
+      applicationName: this.props.applicationName,
+      appInsightsConnectionString: this.props.appInsightsConnectionString
     };
   }
   async componentDidMount() {
@@ -126,6 +131,7 @@ export default class ConsumeApi extends React.Component<IConsumeApiProps, IConsu
       }
     ).catch(ex => {
       console.log(ex)
+      this.loggerHelper.trackException(ex, { message: 'Error occured in getExternalAPIResults.' });
     });
   }
 
@@ -157,7 +163,8 @@ export default class ConsumeApi extends React.Component<IConsumeApiProps, IConsu
           this.setState({ result: response });
         }
       ).catch(ex => {
-        console.log(ex)
+        console.log(ex);
+        this.loggerHelper.trackException(ex, { message: 'Error occured in getResults.' });
       });
 
     }

@@ -10,6 +10,13 @@ define([], function() {
     "BasicGroupName": "Card Detail",
     "RedirectionDetailsGroupName": "Redirection Detail",
     "RedirectURLFieldLabel": "Redirect URL",
-    "ParamNameFieldLabel": "Enter value for name parameter"
+    "TeamsWindowURLFieldLabel": "Teams window redirect URL",
+    "ParamNameFieldLabel": "Enter value for name parameter",
+    "AppInsightsGroupName": "App Insights Configuration",
+    "ApplicationNameFieldLabel": "Application Name",
+    "AppInsightsConnectionStringFieldLabel" : "Connection Strring",
+    "APIGroupName": "API Configurations",
+    "APIURLFieldLabel": "API URL",
+    "AADAplicationResourceFieldLabel": "AAD Aplication Resource"
   }
 });

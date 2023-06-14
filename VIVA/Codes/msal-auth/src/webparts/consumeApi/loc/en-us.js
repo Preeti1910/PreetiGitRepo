@@ -22,7 +22,10 @@ define([], function() {
     "GrantTypeFieldLabel": "Grant Type",
     "ExternalTokenURLFieldLabel": "External Token URL",
     "ExternalURLSuffixFieldLabel": "External URL Suffix",
-    "ClientSecretFieldLabel": "Client Secret"
+    "ClientSecretFieldLabel": "Client Secret",
+    "AppInsightsGroupName": "App Insights Configuration",
+    "ApplicationNameFieldLabel": "Application Name",
+    "AppInsightsConnectionStringFieldLabel" : "Connection String"
 
   }
 });

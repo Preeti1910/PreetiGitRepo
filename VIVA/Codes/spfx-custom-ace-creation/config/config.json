@@ -17,11 +17,20 @@
           "manifest": "./src/adaptiveCardExtensions/aceRedirect/AceRedirectAdaptiveCardExtension.manifest.json"
         }
       ]
+    },
+    "ace-redirect-with-js-adaptive-card-extension": {
+      "components": [
+        {
+          "entrypoint": "./lib/adaptiveCardExtensions/aceRedirectWithJs/AceRedirectWithJsAdaptiveCardExtension.js",
+          "manifest": "./src/adaptiveCardExtensions/aceRedirectWithJs/AceRedirectWithJsAdaptiveCardExtension.manifest.json"
+        }
+      ]
     }
   },
   "externals": {},
   "localizedResources": {
     "SharePointRestAdaptiveCardExtensionStrings": "lib/adaptiveCardExtensions/sharePointRest/loc/{locale}.js",
-    "AceRedirectAdaptiveCardExtensionStrings": "lib/adaptiveCardExtensions/aceRedirect/loc/{locale}.js"
+    "AceRedirectAdaptiveCardExtensionStrings": "lib/adaptiveCardExtensions/aceRedirect/loc/{locale}.js",
+    "AceRedirectWithJsAdaptiveCardExtensionStrings": "lib/adaptiveCardExtensions/aceRedirectWithJs/loc/{locale}.js"
   }
 }

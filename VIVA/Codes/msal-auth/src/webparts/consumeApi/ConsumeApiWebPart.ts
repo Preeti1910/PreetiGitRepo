@@ -31,6 +31,8 @@ export interface IConsumeApiWebPartProps {
   ExternalTokenURL:string;
   ExternalURLSuffix:string;
   //context:WebPartContext;  
+  ApplicationName:string;  
+  AppInsightsConnectionString:string; 
 }
 
 export default class ConsumeApiWebPart extends BaseClientSideWebPart<IConsumeApiWebPartProps> {
@@ -65,7 +67,9 @@ export default class ConsumeApiWebPart extends BaseClientSideWebPart<IConsumeApi
         externalTokenURL: this.properties.ExternalTokenURL,
         externalURLSuffix: this.properties.ExternalURLSuffix,
         clientSecret: this.properties.ClientSecret,
-        context: this.context
+        context: this.context,
+        applicationName: this.properties.ApplicationName,
+        appInsightsConnectionString: this.properties.AppInsightsConnectionString
       }
     );
 
@@ -187,6 +191,17 @@ export default class ConsumeApiWebPart extends BaseClientSideWebPart<IConsumeApi
                 ,
                 PropertyPaneTextField('RequestObject', {
                   label: strings.RequestObjectFieldLabel
+                })
+              ]
+            },
+            {
+              groupName: strings.AppInsightsGroupName,
+              groupFields: [                
+                PropertyPaneTextField('applicationName', {
+                  label: strings.ApplicationNameFieldLabel
+                }),
+                PropertyPaneTextField('appInsightsConnectionString', {
+                  label: strings.AppInsightsConnectionStringFieldLabel
                 })
               ]
             }

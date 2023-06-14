@@ -22,8 +22,33 @@ export class AceRedirectPropertyPane {
                 PropertyPaneTextField('redirectURL', {
                   label: strings.RedirectURLFieldLabel
                 }),
+                PropertyPaneTextField('teamsWindowURL', {
+                  label: strings.TeamsWindowURLFieldLabel
+                })
+              ]
+            },
+            {
+              groupName: strings.AppInsightsGroupName,
+              groupFields: [                
+                PropertyPaneTextField('applicationName', {
+                  label: strings.ApplicationNameFieldLabel
+                }),
+                PropertyPaneTextField('appInsightsConnectionString', {
+                  label: strings.AppInsightsConnectionStringFieldLabel
+                })
+              ]
+            },
+            {
+              groupName: strings.APIGroupName,
+              groupFields: [                
+                PropertyPaneTextField('apiURL', {
+                  label: strings.APIURLFieldLabel
+                }),
                 PropertyPaneTextField('paramName', {
                   label: strings.ParamNameFieldLabel
+                }),
+                PropertyPaneTextField('aadAplicationResource', {
+                  label: strings.AADAplicationResourceFieldLabel
                 })
               ]
             }

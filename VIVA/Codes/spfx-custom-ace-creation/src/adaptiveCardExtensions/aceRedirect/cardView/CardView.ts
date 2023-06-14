@@ -24,8 +24,10 @@ export class CardView extends BaseBasicCardView<IAceRedirectAdaptiveCardExtensio
   }
 
   public get data(): IBasicCardParameters {
+   
+
     return {
-      primaryText: strings.PrimaryText,
+      primaryText: "strings.PrimaryText",
       title: this.properties.title
     };
   }

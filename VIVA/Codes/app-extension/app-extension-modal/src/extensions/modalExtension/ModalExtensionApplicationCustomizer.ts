@@ -37,15 +37,20 @@ export default class ModalExtensionApplicationCustomizer
     /*
       Dialog.alert(`Hello from ${strings.Title}:\n\n${message}`).catch(() => {
         
-      });
-      */
+      });*/
+      
+      //Redirection
+     
+      var currentPageUrl = this.context.pageContext.site.serverRequestPath;
+      console.log('currentPageUrl=' + currentPageUrl);
+      if(currentPageUrl != '/sites/TestViva/SitePages/non-compliance.aspx'){
+        await InvokeRedirection(this.context.httpClient);
+      }
+      
 
+    //await InvokeJSForPop();
 
-    //await InvokeRedirection(this.context.httpClient);
-
-    //await InvokeJS();
-
-    await InvokeCSS();
+    //await InvokeCSS();
     /*
     let htmlScript: HTMLScriptElement = document.createElement("script");
     htmlScript.setAttribute("src", "https://m365x07898200.sharepoint.com/sites/TestViva/SiteAssets/Scripts/modal.js");
@@ -57,9 +62,9 @@ export default class ModalExtensionApplicationCustomizer
 }
 
 function InvokeCSS() {
-  const cssUrl: string = "";
+  const cssUrl: string = "https://m365x6151710.sharepoint.com/sites/TheLanding/SiteAssets/css/globalcss.css";
 
-  console.log('CSS URL', cssUrl)
+  //console.log('CSS URL', cssUrl)
 
   if (cssUrl) {
     const head: HTMLElement = document.getElementsByTagName("head")[0] || document.documentElement;
@@ -73,7 +78,7 @@ function InvokeCSS() {
 
   }
 }
-function InvokeJS() {
+function InvokeJSForPop() {
   let htmlScript: HTMLScriptElement = document.createElement("script");
   htmlScript.setAttribute("src", "https://m365x07898200.sharepoint.com/sites/TestViva/SiteAssets/Scripts/modal.js");
   htmlScript.setAttribute("type", "text/javascript");
@@ -82,21 +87,21 @@ function InvokeJS() {
 }
 
 function InvokeRedirection(httpclient: HttpClient) {
-  httpclient.get("url", HttpClient.configurations.v1).then((res: HttpClientResponse): Promise<any> => {
+  httpclient.get("https://functionapphcl.azurewebsites.net/api/Function1?code=TRjc_Yq9TE38-8-Q1zPXSd5BoQ6T5I-13MMKZE09dPhaAzFul0iHCg==&name=false", HttpClient.configurations.v1).then((res: HttpClientResponse): Promise<any> => {
     return res.json();
   })
     .then((response: any): void => {
       console.log(response);
 
       ///////Preeti: Remove this hard coded value of response.
-      response = "false";
+      //response = "true";
 
 
       if (response === "true") {
         console.log('Response received true');
       } else {
         console.log('Response received false');
-        location.replace("https://m365x07898200.sharepoint.com/sites/TestViva");
+        location.replace("https://m365x07898200.sharepoint.com/sites/TestViva/SitePages/non-compliance.aspx");
       }
     });
 

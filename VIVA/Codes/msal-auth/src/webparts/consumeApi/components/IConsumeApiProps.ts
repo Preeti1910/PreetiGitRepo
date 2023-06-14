@@ -21,4 +21,6 @@ export interface IConsumeApiProps {
   externalTokenURL:string;
   externalURLSuffix:string;
   context:WebPartContext;  
+  applicationName:string;  
+  appInsightsConnectionString:string;  
 }

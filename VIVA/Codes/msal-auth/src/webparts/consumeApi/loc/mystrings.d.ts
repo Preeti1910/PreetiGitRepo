@@ -22,6 +22,9 @@ declare interface IConsumeApiWebPartStrings {
   ClientSecretFieldLabel: string;
   ExternalTokenURLFieldLabel: string;
   ExternalURLSuffixFieldLabel: string;
+  AppInsightsGroupName:string;
+  ApplicationNameFieldLabel:string;
+  AppInsightsConnectionStringFieldLabel:string
 }
 
 declare module 'ConsumeApiWebPartStrings' {
