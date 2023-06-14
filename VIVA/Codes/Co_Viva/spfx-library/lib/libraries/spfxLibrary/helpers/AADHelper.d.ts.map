@@ -1,0 +1,1 @@
+{"version":3,"file":"AADHelper.d.ts","sourceRoot":"","sources":["../../../../src/libraries/spfxLibrary/helpers/AADHelper.ts"],"names":[],"mappings":"AACA,OAAO,EAAE,cAAc,EAAE,MAAM,4BAA4B,CAAC;AAE5D,qBAAa,SAAS;IAClB,OAAO,CAAC,SAAS,CAAiB;gBACf,OAAO,EAAE,cAAc;IAMnC,WAAW,QAAe,MAAM,yBAAyB,MAAM,KAAG,QAAQ,GAAG,CAAC,CAmBpF;CACJ"}

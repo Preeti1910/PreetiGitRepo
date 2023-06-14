@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\adaptiveCardExtensions",
+    "\\src\\adaptiveCardExtensions\\apiConsumerCard",
+    "\\src\\adaptiveCardExtensions\\apiConsumerCard\\loc",
+    "\\src\\adaptiveCardExtensions\\apiConsumerCard\\props"
+  ],
+  "SelectedNode": "\\src\\adaptiveCardExtensions\\apiConsumerCard\\loc\\mystring.d.ts",
+  "PreviewInSolutionExplorer": false
+}

@@ -1,0 +1,1 @@
+{"version":3,"file":"ServiceProvider.d.ts","sourceRoot":"","sources":["../../../../src/adaptiveCardExtensions/apiConsumerCard/helper/ServiceProvider.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,YAAY,EAAE,MAAM,oBAAoB,CAAC;AAElD,qBAAa,eAAe;IAE1B,OAAO,CAAC,eAAe,CAAc;gBAClB,YAAY,EAAE,YAAY;IAKtC,SAAS,QAAe,MAAM,KAAG,QAAQ,GAAG,CAAC,CAYnD;CAEF"}

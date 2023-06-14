@@ -1,0 +1,11 @@
+C:\Projects\Personal\PreetiGitRepo\VIVA\Codes\WebAPI\WebApplication1\obj\Release\net6.0\PubTmp\Out\WebApplication1.exe
+C:\Projects\Personal\PreetiGitRepo\VIVA\Codes\WebAPI\WebApplication1\obj\Release\net6.0\PubTmp\Out\appsettings.Development.json
+C:\Projects\Personal\PreetiGitRepo\VIVA\Codes\WebAPI\WebApplication1\obj\Release\net6.0\PubTmp\Out\appsettings.json
+C:\Projects\Personal\PreetiGitRepo\VIVA\Codes\WebAPI\WebApplication1\obj\Release\net6.0\PubTmp\Out\WebApplication1.dll
+C:\Projects\Personal\PreetiGitRepo\VIVA\Codes\WebAPI\WebApplication1\obj\Release\net6.0\PubTmp\Out\WebApplication1.deps.json
+C:\Projects\Personal\PreetiGitRepo\VIVA\Codes\WebAPI\WebApplication1\obj\Release\net6.0\PubTmp\Out\WebApplication1.runtimeconfig.json
+C:\Projects\Personal\PreetiGitRepo\VIVA\Codes\WebAPI\WebApplication1\obj\Release\net6.0\PubTmp\Out\WebApplication1.pdb
+C:\Projects\Personal\PreetiGitRepo\VIVA\Codes\WebAPI\WebApplication1\obj\Release\net6.0\PubTmp\Out\Microsoft.OpenApi.dll
+C:\Projects\Personal\PreetiGitRepo\VIVA\Codes\WebAPI\WebApplication1\obj\Release\net6.0\PubTmp\Out\Swashbuckle.AspNetCore.Swagger.dll
+C:\Projects\Personal\PreetiGitRepo\VIVA\Codes\WebAPI\WebApplication1\obj\Release\net6.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Projects\Personal\PreetiGitRepo\VIVA\Codes\WebAPI\WebApplication1\obj\Release\net6.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerUI.dll
