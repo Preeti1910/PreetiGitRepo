@@ -22,16 +22,17 @@
     "description": { "default": "ConsumeAPI description" },
     "officeFabricIconFontName": "Page",
     "properties": {
-      "description": "ConsumeAPI",
-      "ClientId": "1e8fa4bf-7a26-4d14-be24-fc78cb6da985",
-      "TenantId": "2361c635-3274-4be1-b664-a1e14d810607",
-      "RedirectUrl": "https://m365x07898200.sharepoint.com/sites/droneproducttraining",
-      "Scope": "[\"user.read\"]",
-      "APIURL": "https://apimqa.myhcl.com/ssd/api/Mobile/SSDEmployeeRecentUpdate?loginCode=51997319",
+      "description": "API Consumer",
+      "ClientId": "",
+      "TenantId": "",
+      "RedirectUrl": "",      
+      "Scope": "",
+      "APIURL": "",
       "OcpApimTrace": "true",
-      "OcpApimSubscriptionKey": "123",
+      "OcpApimSubscriptionKey": "",
       "RequestObject": "",
-      "APImethod":"GET"
+      "APImethod":"GET",
+      "grantType":"client_credentials"
     }
   }]
 }

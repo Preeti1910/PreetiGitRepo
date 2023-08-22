@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "hcl-viva-webpart-client-side-solution",
+    "id": "fc964b06-e0c2-4995-89eb-9f2767e758a7",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.16.1"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "hcl-viva-webpart description"
+      },
+      "longDescription": {
+        "default": "hcl-viva-webpart description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "hcl-viva-webpart Feature",
+        "description": "The feature that activates elements of the hcl-viva-webpart solution.",
+        "id": "15253fa7-c2fa-4b52-8ad5-eb8634e09e71",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/hcl-viva-webpart.sppkg"
+  }
+}

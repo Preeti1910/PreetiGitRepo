@@ -3,7 +3,7 @@
   "solution": {
     "name": "ace-share-point-rest-client-side-solution",
     "id": "43d2dd86-25fe-4c4b-90d7-6b8b93b9c60c",
-    "version": "1.0.0.0",
+    "version": "1.0.0.2",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,

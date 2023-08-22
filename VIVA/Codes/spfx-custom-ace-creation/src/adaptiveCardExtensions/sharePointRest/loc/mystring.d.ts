@@ -6,6 +6,10 @@ declare interface ISharePointRestAdaptiveCardExtensionStrings {
   PrimaryText: string;
   Description: string;
   QuickViewButton: string;
+  BasicGroupName:string;
+  RedirectionDetailsGroupName:string;
+  RedirectURLFieldLabel:string;
+  ParamNameFieldLabel:string;
 }
 
 declare module 'SharePointRestAdaptiveCardExtensionStrings' {

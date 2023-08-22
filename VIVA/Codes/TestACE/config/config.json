@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "helloworld-adaptive-card-extension": {
+      "components": [
+        {
+          "entrypoint": "./lib/adaptiveCardExtensions/helloworld/HelloworldAdaptiveCardExtension.js",
+          "manifest": "./src/adaptiveCardExtensions/helloworld/HelloworldAdaptiveCardExtension.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "HelloworldAdaptiveCardExtensionStrings": "lib/adaptiveCardExtensions/helloworld/loc/{locale}.js"
+  }
+}

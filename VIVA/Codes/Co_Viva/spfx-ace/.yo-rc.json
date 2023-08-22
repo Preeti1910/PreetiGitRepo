@@ -1,0 +1,22 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "14.18.2",
+    "sdksVersions": {
+      "@microsoft/microsoft-graph-client": "3.0.2",
+      "@microsoft/teams-js": "2.4.1"
+    },
+    "version": "1.16.1",
+    "libraryName": "viva-connection-ace",
+    "libraryId": "9571f62c-8c28-4d95-b01c-4283b6dae354",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "viva-connection-ace",
+    "solutionShortDescription": "viva-connection-ace description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "adaptiveCardExtension",
+    "aceTemplateType": "Basic"
+  }
+}

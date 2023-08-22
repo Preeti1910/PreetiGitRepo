@@ -6,6 +6,10 @@ define([], function() {
     "SubTitle": "Quick view",
     "PrimaryText": "SPFx Adaptive Card Extension",
     "Description": "Create your SPFx Adaptive Card Extension solution!",
-    "QuickViewButton": "Quick view"
+    "QuickViewButton": "Quick view",
+    "BasicGroupName": "Card Detail",
+    "RedirectionDetailsGroupName": "Redirection Detail",
+    "RedirectURLFieldLabel": "Redirect URL",
+    "ParamNameFieldLabel": "Enter value for name parameter"
   }
 });

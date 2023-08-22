@@ -24,10 +24,12 @@
       "webpack-env"
     ],
     "lib": [
-      "es5",
+      "ES7",
       "dom",
       "es2015.collection",
-      "es2015.promise"
+      "es2015.promise",
+      "es2017",
+      "ES2021"
     ]
   },
   "include": [

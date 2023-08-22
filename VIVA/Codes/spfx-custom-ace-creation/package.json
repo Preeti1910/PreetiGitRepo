@@ -9,10 +9,15 @@
     "test": "gulp test"
   },
   "dependencies": {
-    "tslib": "2.3.1",
-    "@microsoft/sp-core-library": "1.15.2",
-    "@microsoft/sp-property-pane": "1.15.2",
-    "@microsoft/sp-adaptive-card-extension-base": "1.15.2"
+    "@microsoft/applicationinsights-react-js": "^3.4.1",
+    "@microsoft/applicationinsights-web": "^2.8.10",
+    "@microsoft/sp-adaptive-card-extension-base": "1.16.1",
+    "@microsoft/sp-core-library": "1.16.1",
+    "@microsoft/sp-property-pane": "1.16.1",
+    "@microsoft/teams-js": "^2.9.0",
+    "adaptivecards": "^2.11.2",
+    "swiper": "^9.1.0",
+    "tslib": "2.3.1"
   },
   "devDependencies": {
     "@microsoft/rush-stack-compiler-4.5": "0.2.2",
@@ -24,6 +29,6 @@
     "ajv": "^6.12.5",
     "gulp": "4.0.2",
     "typescript": "4.5.5",
-    "@microsoft/sp-module-interfaces": "1.15.2"
+    "@microsoft/sp-module-interfaces": "1.16.1"
   }
 }

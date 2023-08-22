@@ -11,13 +11,21 @@ define([], function() {
     "ClientIdFieldLabel": "Client Id",
     "TenantIdFieldLabel": "Tenant Id",
     "RedirectUrlFieldLabel": "Redirect Url",
-    "ScopeFieldLabel": "Scope (JSON)",
+    "ScopeFieldLabel": "Scope",
     "APIConfigurationGroupName": "API Configurations",
+    "AuthTokenTypeToGenerateFieldLabel": "API Auth Token Type",
     "APIURLFieldLabel": "API URL",
     "APIMethodFieldLabel": "API Method",
     "OcpApimTraceFieldLabel": "Ocp-Apim-Trace",
     "OcpApimSubscriptionKeyFieldLabel": "Ocp-Apim-Subscription-Key",
     "RequestObjectFieldLabel": "Request Object (JSON)",
+    "GrantTypeFieldLabel": "Grant Type",
+    "ExternalTokenURLFieldLabel": "External Token URL",
+    "ExternalURLSuffixFieldLabel": "External URL Suffix",
+    "ClientSecretFieldLabel": "Client Secret",
+    "AppInsightsGroupName": "App Insights Configuration",
+    "ApplicationNameFieldLabel": "Application Name",
+    "AppInsightsConnectionStringFieldLabel" : "Connection String"
 
   }
 });
