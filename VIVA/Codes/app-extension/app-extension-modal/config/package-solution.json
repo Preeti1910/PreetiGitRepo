@@ -3,7 +3,7 @@
   "solution": {
     "name": "modal-extension-client-side-solution",
     "id": "e3d299c1-3ee0-4550-ac27-f22614c482cd",
-    "version": "1.0.0.0",
+    "version": "1.0.0.4",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,

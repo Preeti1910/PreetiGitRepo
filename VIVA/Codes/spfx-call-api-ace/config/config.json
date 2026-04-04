@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "api-consumer-card-adaptive-card-extension": {
+      "components": [
+        {
+          "entrypoint": "./lib/adaptiveCardExtensions/apiConsumerCard/ApiConsumerCardAdaptiveCardExtension.js",
+          "manifest": "./src/adaptiveCardExtensions/apiConsumerCard/ApiConsumerCardAdaptiveCardExtension.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "ApiConsumerCardAdaptiveCardExtensionStrings": "lib/adaptiveCardExtensions/apiConsumerCard/loc/{locale}.js"
+  }
+}

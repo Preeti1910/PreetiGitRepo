@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "redirect-ace-adaptive-card-extension": {
+      "components": [
+        {
+          "entrypoint": "./lib/adaptiveCardExtensions/redirectAce/RedirectAceAdaptiveCardExtension.js",
+          "manifest": "./src/adaptiveCardExtensions/redirectAce/RedirectAceAdaptiveCardExtension.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "RedirectAceAdaptiveCardExtensionStrings": "lib/adaptiveCardExtensions/redirectAce/loc/{locale}.js"
+  }
+}

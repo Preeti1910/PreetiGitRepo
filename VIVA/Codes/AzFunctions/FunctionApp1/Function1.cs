@@ -29,7 +29,6 @@ namespace FunctionApp1
                     output = output + kv.Key + "=" + kv.Value + "\n";
                 }
                 Console.WriteLine(output);
-                return new JsonResult(output);
             }
 
             string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
@@ -40,8 +39,10 @@ namespace FunctionApp1
                 ? "This HTTP triggered function executed successfully. Pass a name in the query string or in the request body for a personalized response."
                 : $"Hello, {name}. This HTTP triggered function executed successfully.";
 
+            responseMessage = "This is the response from API";
+
            // return new OkObjectResult(responseMessage);
-            return new JsonResult(responseMessage);
+            return new JsonResult(name);
         }
     }
 }

@@ -1,0 +1,21 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "14.18.2",
+    "sdksVersions": {
+      "@microsoft/microsoft-graph-client": "3.0.2",
+      "@microsoft/teams-js": "2.4.1"
+    },
+    "version": "1.16.1",
+    "libraryName": "hcl-viva-webpart",
+    "libraryId": "fc964b06-e0c2-4995-89eb-9f2767e758a7",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "hcl-viva-webpart",
+    "solutionShortDescription": "hcl-viva-webpart description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}

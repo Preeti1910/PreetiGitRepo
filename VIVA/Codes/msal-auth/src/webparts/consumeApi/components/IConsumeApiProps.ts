@@ -1,3 +1,5 @@
+import { WebPartContext } from "@microsoft/sp-webpart-base";
+
 export interface IConsumeApiProps {
   description: string;
   isDarkTheme: boolean;
@@ -13,4 +15,12 @@ export interface IConsumeApiProps {
   OcpApimSubscriptionKey: string;
   RequestObject:string;
   APImethod:string;
+  AuthTokenTypeToGenerate:string;
+  grantType:string;
+  clientSecret:string;
+  externalTokenURL:string;
+  externalURLSuffix:string;
+  context:WebPartContext;  
+  applicationName:string;  
+  appInsightsConnectionString:string;  
 }

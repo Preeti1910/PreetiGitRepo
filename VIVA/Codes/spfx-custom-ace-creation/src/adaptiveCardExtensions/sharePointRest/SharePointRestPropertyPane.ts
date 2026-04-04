@@ -9,12 +9,24 @@ export class SharePointRestPropertyPane {
           header: { description: strings.PropertyPaneDescription },
           groups: [
             {
+              groupName: strings.BasicGroupName,
               groupFields: [
                 PropertyPaneTextField('title', {
                   label: strings.TitleFieldLabel
                 }),
                 PropertyPaneTextField('listId', {
                   label: 'List ID (GUID)'
+                })
+              ]
+            },
+            {
+              groupName: strings.RedirectionDetailsGroupName,
+              groupFields: [
+                PropertyPaneTextField('redirectURL', {
+                  label: strings.RedirectURLFieldLabel
+                }),
+                PropertyPaneTextField('paramName', {
+                  label: strings.ParamNameFieldLabel
                 })
               ]
             }

@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "viva-connection-ace-client-side-solution",
+    "id": "9571f62c-8c28-4d95-b01c-4283b6dae354",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.16.1"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "viva-connection-ace description"
+      },
+      "longDescription": {
+        "default": "viva-connection-ace description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "viva-connection-ace Feature",
+        "description": "The feature that activates elements of the viva-connection-ace solution.",
+        "id": "46fedf0f-eba5-49c6-ac90-7941ec020cd0",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/viva-connection-ace.sppkg"
+  }
+}

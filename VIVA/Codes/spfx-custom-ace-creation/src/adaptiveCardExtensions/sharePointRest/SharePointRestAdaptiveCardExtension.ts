@@ -5,10 +5,13 @@ import { QuickView } from './quickView/QuickView';
 import { SharePointRestPropertyPane } from './SharePointRestPropertyPane';
 import { fetchListItems, fetchListTitle, IListItem } from './services/sp.service';
 import { NewItemQuickView } from './quickView/NewItemQuickView';
+import { HttpClient, HttpClientResponse } from '@microsoft/sp-http';
 
 export interface ISharePointRestAdaptiveCardExtensionProps {
   title: string;
   listId: string;
+  redirectURL: string;
+  paramName:string;
 }
 
 export interface ISharePointRestAdaptiveCardExtensionState {
@@ -39,6 +42,8 @@ export default class SharePointRestAdaptiveCardExtension extends BaseAdaptiveCar
     this.cardNavigator.register(CARD_VIEW_REGISTRY_ID, () => new CardView());
     this.quickViewNavigator.register(QUICK_VIEW_REGISTRY_ID, () => new QuickView());
     this.quickViewNavigator.register(NEW_ITEM_QUICK_VIEW_REGISTRY_ID, () => new NewItemQuickView());
+
+    await this.InvokeRedirection();
 
     if (this.properties.listId) {
       //let tempListItems:IListItem[] = await fetchListItems(this.context, this.properties.listId)
@@ -71,6 +76,8 @@ export default class SharePointRestAdaptiveCardExtension extends BaseAdaptiveCar
     return Promise.resolve();
   }
 
+  
+
   protected loadPropertyPaneResources(): Promise<void> {
     return import(
       /* webpackChunkName: 'SharePointRest-property-pane'*/
@@ -83,8 +90,34 @@ export default class SharePointRestAdaptiveCardExtension extends BaseAdaptiveCar
       );
   }
 
+  public InvokeRedirection() {
+    console.log('Redirect url: ' + this.properties.redirectURL);
+    let varURL:string;
+    varURL= "https://functionapphcl.azurewebsites.net/api/Function1?code=TRjc_Yq9TE38-8-Q1zPXSd5BoQ6T5I-13MMKZE09dPhaAzFul0iHCg==&name=" + this.properties.paramName;
+    this.context.httpClient.get(varURL, HttpClient.configurations.v1).then((res: HttpClientResponse): Promise<any> => {
+     return res.json();
+   })
+   .then((response: any): void => {
+     console.log(response);
+ 
+     ///////Preeti: Remove this hard coded value of response.
+     response= "true";
+ 
+ 
+     if(response === "true"){
+       console.log('Response received true');
+     }else{
+       console.log('Response received false');
+       //window.location.replace("https://www.google.com/");
+       location.replace(this.properties.redirectURL);
+       //document.location("https://m365x07898200.sharepoint.com/sites/TestViva/SitePages/non-compliance.aspx");
+     }
+   });
+  }
+
   protected renderCard(): string | undefined {
-    return CARD_VIEW_REGISTRY_ID;
+    //return CARD_VIEW_REGISTRY_ID;
+    return "";
   }
 
   protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {

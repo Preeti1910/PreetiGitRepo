@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "hide-divs-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/hideDivs/HideDivsWebPart.js",
+          "manifest": "./src/webparts/hideDivs/HideDivsWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "HideDivsWebPartStrings": "lib/webparts/hideDivs/loc/{locale}.js"
+  }
+}

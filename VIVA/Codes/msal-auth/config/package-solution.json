@@ -3,7 +3,7 @@
   "solution": {
     "name": "msal-auth-client-side-solution",
     "id": "e3db40e4-d627-4b44-8bc9-a21929cdff3d",
-    "version": "1.0.0.0",
+    "version": "1.0.0.1",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,

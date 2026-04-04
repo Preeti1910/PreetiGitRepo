@@ -4,7 +4,7 @@
   "https": true,
   "serveConfigurations": {
     "default": {
-      "pageUrl": "https://m365x07898200.sharepoint.com/sites/TestViva/SitePages/modal-test.aspx",
+      "pageUrl": "https://m365x07898200.sharepoint.com/sites/TestViva/SitePages/non-compliance.aspx",
       "customActions": {
         "b5585d43-d7ab-407a-a7ab-2ad81ca35739": {
           "location": "ClientSideExtension.ApplicationCustomizer",
@@ -15,7 +15,7 @@
       }
     },
     "modalExtension": {
-      "pageUrl": "https://m365x07898200.sharepoint.com/sites/TestViva/SitePages/modal-test.aspx",
+      "pageUrl": "https://m365x07898200.sharepoint.com/sites/TestViva/SitePages/non-compliance.aspx",
       "customActions": {
         "b5585d43-d7ab-407a-a7ab-2ad81ca35739": {
           "location": "ClientSideExtension.ApplicationCustomizer",
