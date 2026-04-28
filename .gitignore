@@ -1,10 +1,22 @@
-﻿################################################################################
-# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
-################################################################################
+﻿## .NET Build Output
+**/bin/
+**/obj/
 
-/VIVA/Codes/spfx-company-announcements-ace/.vscode
-/.vs
-/VIVA/Codes/msal-auth/.vscode
-/VIVA/Codes/ace-card1/.vscode
-/VIVA/Codes/spfx-custom-ace-creation/.vscode
-/VIVA/Codes/app-extension/app-extension-modal/.vscode
+## Visual Studio
+.vs/
+*.user
+*.suo
+
+## VS Code
+.vscode/
+
+## Secrets
+appsettings.json
+
+## Database
+DB/
+
+## OS
+Thumbs.db
+Desktop.ini
+.DS_Store
