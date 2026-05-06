@@ -30,8 +30,7 @@ public class AgentEvaluationTests : IDisposable
             TenantId = "16b3c013-d300-468d-ac64-7eda0820b6d3"
         });
 
-        var endpoint = Environment.GetEnvironmentVariable("AZURE_OPENAI_ENDPOINT")
-            ?? "https://foundry-capstone-for-preeti.openai.azure.com/";
+        var endpoint = Environment.GetEnvironmentVariable("AZURE_OPENAI_ENDPOINT");
         var deployment = Environment.GetEnvironmentVariable("AZURE_OPENAI_DEPLOYMENT")
             ?? "gpt-4o-mini";
 
