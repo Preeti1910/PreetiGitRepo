@@ -6,29 +6,16 @@ using Microsoft.Agents.AI.Hosting;
 using Microsoft.Agents.AI.Hosting.OpenAI;
 using Microsoft.Data.Sqlite;
 using Microsoft.Extensions.AI;
-using OpenTelemetry;
 using OpenTelemetry.Resources;
 using OpenTelemetry.Trace;
-using System.Diagnostics;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // --- 0. Tracing setup (OpenTelemetry) ---
-var activitySource = new ActivitySource("AgenticUberData");
-
-// Enable OpenTelemetry listener so Activity objects are actually created
-ActivitySource.AddActivityListener(new ActivityListener
-{
-    ShouldListenTo = _ => true,
-    Sample = (ref ActivityCreationOptions<ActivityContext> _) => ActivitySamplingResult.AllDataAndRecorded
-});
-
 builder.Services.AddOpenTelemetry()
     .ConfigureResource(r => r.AddService("AgenticUberData"))
     .WithTracing(tracing => tracing
-        .AddSource("AgenticUberData")
-        .AddSource("Microsoft.Extensions.AI")
-        .AddSource("Microsoft.Agents.AI")
+        .AddSource("*")
         .AddConsoleExporter());
 
 builder.Logging.AddConsole();
@@ -82,15 +69,55 @@ IMPORTANT DATA SCHEMA NOTES:
 RULES:
 - Always use the ExecuteSqlQuery tool to answer questions involving counts, statistics, or data lookups.
 - Never fabricate numbers — only report what the database returns.
-- Provide a clear textual summary of the results.
-- When the result would benefit from visualization, describe the recommended chart type
-  (bar chart, pie chart, table, etc.) and the data series.
 - IMPORTANT: When writing SQL, always use square brackets for column names that contain spaces,
   e.g. [Booking Status], [Vehicle Type], [Driver Cancellation Reason]. Never use double quotes for identifiers.
 - IMPORTANT: In this database, missing/empty values may be stored as the literal string 'null' OR as SQL NULL.
   To filter out missing values, always use BOTH checks: [ColumnName] IS NOT NULL AND [ColumnName] != 'null'.
-- IMPORTANT: Always use plain ASCII single quotes (') in SQL string literals. Never use unicode escapes like \u0027.",
-        tools: [sqlTool]);
+- IMPORTANT: Always use plain ASCII single quotes (') in SQL string literals. Never use unicode escapes like \u0027.
+
+OUTPUT FORMAT — Always structure your response with ALL of these sections:
+
+1. **Summary**: A brief 1-2 sentence overview of the finding.
+
+2. **Data Table**: Present the data in a markdown table with columns for the category, count, and percentage.
+   Example:
+   | Booking Status | Count | Percentage |
+   |---|---|---|
+   | Completed | 93,000 | 62.0% |
+
+3. **Visualization**: Since this is a text-based UI, render visualizations using unicode block characters.
+   Choose the appropriate style based on the data:
+
+   - For **distribution/proportion** data (e.g., vehicle types, cancellation proportions):
+     Show a proportional breakdown that sums to 100%. Use different colored emoji squares as legend markers:
+     🟦 🟩 🟨 🟥 🟪 🟫 ⬜
+     Format each line as: [emoji] [label] [bar of ■ chars proportional to %] [percentage]
+     Example:
+     🟦 Auto           ■■■■■■■■■■■■■■ 27.9%
+     🟩 Go Mini        ■■■■■■■■■■■ 22.1%
+     🟨 Go Sedan       ■■■■■■■■■■ 20.1%
+     Scale the largest segment to ~15 characters.
+
+   - For **count comparison** data (e.g., booking status counts):
+     Use horizontal bars with █ characters:
+     Completed           ████████████████████ 93,000
+     Cancelled by Driver █████████ 27,000
+     Scale the longest bar to ~20 characters.
+
+   - For **ranked lists** (e.g., top cancellation reasons):
+     Use numbered entries with proportional bars:
+     1. Reason A  ████████████████ 45.2%
+     2. Reason B  ██████████ 30.1%
+     3. Reason C  █████ 15.5%
+
+4. **Insights**: 2-3 bullet points highlighting key takeaways (e.g., dominant category,
+   notable ratios, anomalies).
+
+Always include all four sections in your response. Use percentages alongside raw counts.",
+        tools: [sqlTool])
+    .AsBuilder()
+    .UseOpenTelemetry(configure: cfg => cfg.EnableSensitiveData = true)
+    .Build();
 });
 
 // --- 3. Register DevUI (development only) ---
