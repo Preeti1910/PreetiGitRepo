@@ -1,0 +1,17 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug AgenticUberData",
+      "type": "coreclr",
+      "request": "launch",
+      "program": "${workspaceFolder}/AgenticUberData/bin/Debug/net10.0/AgenticUberData.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/AgenticUberData",
+      "stopAtEntry": false,
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  ]
+}
