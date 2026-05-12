@@ -20,3 +20,21 @@ DB/
 Thumbs.db
 Desktop.ini
 .DS_Store
+################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/VIVA/Codes/spfx-company-announcements-ace/.vscode
+/.vs
+/VIVA/Codes/msal-auth/.vscode
+/VIVA/Codes/ace-card1/.vscode
+/VIVA/Codes/spfx-custom-ace-creation/.vscode
+/VIVA/Codes/app-extension/app-extension-modal/.vscode
+
+# Environment files with secrets
+.env
+
+# Build output
+**/bin/
+**/obj/
+agentic-learning/Legal Consultant/backend/LegalConsultant.Api/appsettings.Development.json
