@@ -1,4 +1,26 @@
-﻿################################################################################
+﻿## .NET Build Output
+**/bin/
+**/obj/
+
+## Visual Studio
+.vs/
+*.user
+*.suo
+
+## VS Code
+.vscode/
+
+## Secrets
+appsettings.json
+
+## Database
+DB/
+
+## OS
+Thumbs.db
+Desktop.ini
+.DS_Store
+################################################################################
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
