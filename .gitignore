@@ -8,3 +8,11 @@
 /VIVA/Codes/ace-card1/.vscode
 /VIVA/Codes/spfx-custom-ace-creation/.vscode
 /VIVA/Codes/app-extension/app-extension-modal/.vscode
+
+# Environment files with secrets
+.env
+
+# Build output
+**/bin/
+**/obj/
+agentic-learning/Legal Consultant/backend/LegalConsultant.Api/appsettings.Development.json
