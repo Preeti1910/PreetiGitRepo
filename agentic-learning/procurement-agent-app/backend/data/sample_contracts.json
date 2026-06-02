@@ -1,0 +1,11 @@
+[
+  {
+    "id": "c1",
+    "vendor_name": "Vendor A",
+    "contract_title": "Laptop Procurement Agreement",
+    "summary": "Supply of enterprise laptops for internal workforce refresh.",
+    "payment_terms": "Net 30",
+    "renewal_clause": "Annual renewal unless terminated with 30 days notice",
+    "termination_clause": "Either party may terminate for material breach"
+  }
+]
