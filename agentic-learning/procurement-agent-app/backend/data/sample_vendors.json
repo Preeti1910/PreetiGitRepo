@@ -1,0 +1,29 @@
+[
+  {
+    "id": "v1",
+    "name": "Vendor A",
+    "category": "Laptops",
+    "price": 95000,
+    "rating": 4.6,
+    "delivery_days": 7,
+    "risk_level": "low"
+  },
+  {
+    "id": "v2",
+    "name": "Vendor B",
+    "category": "Laptops",
+    "price": 89000,
+    "rating": 4.2,
+    "delivery_days": 10,
+    "risk_level": "medium"
+  },
+  {
+    "id": "v3",
+    "name": "Vendor C",
+    "category": "Laptops",
+    "price": 99000,
+    "rating": 4.8,
+    "delivery_days": 14,
+    "risk_level": "high"
+  }
+]
