@@ -3,10 +3,12 @@ from app.services.openai_service import complete
 from app.tools.contract_tool import get_contracts
 
 
-def contract_agent(query: str) -> Dict[str, Any]:
+def contract_agent(query: str, context: str = "") -> Dict[str, Any]:
     contracts = get_contracts()
+    context_block = f"\nPrevious conversation:\n{context}\n" if context else ""
     prompt = f"""
 You are a procurement contract analysis agent.
+{context_block}
 User query: {query}
 Available contracts: {contracts}
 Summarize the contract and answer only from the provided contract data.
