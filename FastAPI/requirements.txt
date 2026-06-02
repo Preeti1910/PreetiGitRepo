@@ -1,0 +1,7 @@
+fastapi
+uvicorn
+gunicorn
+azure-cosmos
+azure-identity
+python-dotenv
+pydantic
