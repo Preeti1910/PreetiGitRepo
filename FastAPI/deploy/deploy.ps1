@@ -108,7 +108,8 @@ if ($currentSettings) {
 
 $needsUpdate = ($settingsMap["COSMOS_ENDPOINT"] -ne $cosmosEndpoint) -or
                ($settingsMap["COSMOS_DATABASE"] -ne $cosmosDatabase) -or
-               ($settingsMap["COSMOS_CONTAINER"] -ne $cosmosContainer)
+               ($settingsMap["COSMOS_CONTAINER"] -ne $cosmosContainer) -or
+               ($settingsMap["SCM_DO_BUILD_DURING_DEPLOYMENT"] -ne "true")
 
 if ($needsUpdate) {
     az webapp config appsettings set `
@@ -118,6 +119,7 @@ if ($needsUpdate) {
             COSMOS_ENDPOINT=$cosmosEndpoint `
             COSMOS_DATABASE=$cosmosDatabase `
             COSMOS_CONTAINER=$cosmosContainer `
+            SCM_DO_BUILD_DURING_DEPLOYMENT=true `
         --output none
     Write-Host "      App settings updated." -ForegroundColor Green
 }

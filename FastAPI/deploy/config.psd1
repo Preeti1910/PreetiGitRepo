@@ -3,12 +3,12 @@
 
 @{
     # Azure Resource Settings
-    ResourceGroup     = "rg_self_learn"
-    Location          = "East US 2"
+    ResourceGroup     = "rg_self_learn_indonesia_central"
+    Location          = "Indonesia Central"
     AppName           = "fastapi-products-app"       # Must be globally unique
     AppServicePlan    = "fastapi-products-app-plan"
     PythonRuntime     = "PYTHON:3.11"
-    Sku               = "F1"
+    Sku               = "B1"
 
     # Cosmos DB Settings
     CosmosAccountName = "cosmosdbself"
